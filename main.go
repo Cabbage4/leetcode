@@ -1,44 +1,81 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
+	"math"
+	"strconv"
 )
 
 func main() {
-	fmt.Println(reverseVowels("hello"))
-	fmt.Println(reverseVowels("leetcode"))
+	fmt.Println(readBinaryWatch(1))
 }
 
-func reverseVowels(s string) string {
-	mp := make([]bool, 256)
-	mp['a'] = true
-	mp['e'] = true
-	mp['i'] = true
-	mp['o'] = true
-	mp['u'] = true
-	mp['A'] = true
-	mp['E'] = true
-	mp['I'] = true
-	mp['O'] = true
-	mp['U'] = true
+func readBinaryWatch(turnedOn int) []string {
+	book := make([]bool, 10)
+	resultMp := make(map[string]bool)
+	dfs(book, turnedOn, 0, resultMp)
 
-	b := []byte(s)
-
-	left := 0
-	right := len(b) - 1
-
-	for left < right {
-		for left < right && !mp[b[left]] {
-			left++
+	result := make([]string, 0)
+	for k := range resultMp {
+		if k == "" {
+			continue
 		}
-		for left < right && !mp[b[right]] {
-			right--
-		}
-
-		b[left], b[right] = b[right], b[left]
-		left++
-		right--
+		result = append(result, k)
 	}
 
-	return string(b)
+	return result
+}
+
+func dfs(book []bool, total int, cur int, result map[string]bool) {
+	if cur == total {
+		result[bookToStr(book)] = true
+		return
+	}
+
+	for i := range book {
+		if book[i] {
+			continue
+		}
+
+		book[i] = true
+		dfs(book, total, cur+1, result)
+		book[i] = false
+	}
+}
+
+func bookToStr(book []bool) string {
+	result := bytes.NewBufferString("")
+
+	top := 0
+	for i := 0; i < 4; i++ {
+		if book[i] {
+			top += int(math.Pow(float64(2), float64(3-i)))
+		}
+	}
+
+	if top >= 12 {
+		return ""
+	}
+
+	result.WriteString(strconv.Itoa(top))
+	result.WriteString(":")
+
+	low := 0
+	for i := 4; i < 10; i++ {
+		if book[i] {
+			low += int(math.Pow(float64(2), float64(i-4)))
+		}
+	}
+
+	if low >= 60 {
+		return ""
+	}
+
+	if low < 10 {
+		result.WriteString("0")
+	}
+	result.WriteString(strconv.Itoa(low))
+
+	return result.String()
 }
