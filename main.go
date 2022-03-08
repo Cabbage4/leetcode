@@ -4,6 +4,6 @@ func main() {
 
 }
 
-func largestPerimeter(nums []int) int {
+func removeDuplicates(s string) string {
 
 }
