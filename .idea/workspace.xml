@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c84e0226-78ac-4627-b3eb-831d7e8031af" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/1952/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1961/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1967/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1974/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1991/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2006/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2016/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2022/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2027/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2032/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2037/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
@@ -70,14 +69,15 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/2022" />
       <recent name="$PROJECT_DIR$/1863" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/2006" />
-      <recent name="$PROJECT_DIR$/1991" />
-      <recent name="$PROJECT_DIR$/1967" />
-      <recent name="$PROJECT_DIR$/1961" />
-      <recent name="$PROJECT_DIR$/1974" />
+      <recent name="$PROJECT_DIR$/2032" />
+      <recent name="$PROJECT_DIR$/2027" />
+      <recent name="$PROJECT_DIR$/2037" />
+      <recent name="$PROJECT_DIR$/2016" />
+      <recent name="$PROJECT_DIR$/1971" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build leetcode">
@@ -260,14 +260,19 @@
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/1952/main.go</url>
-          <line>17</line>
-          <option name="timeStamp" value="58" />
+          <url>file://$PROJECT_DIR$/2016/main.go</url>
+          <line>15</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/2006/main.go</url>
-          <line>21</line>
-          <option name="timeStamp" value="59" />
+          <url>file://$PROJECT_DIR$/2027/main.go</url>
+          <line>11</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/2032/main.go</url>
+          <line>27</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
