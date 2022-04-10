@@ -5,13 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c84e0226-78ac-4627-b3eb-831d7e8031af" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/2016/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2022/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2027/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2032/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2037/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/12/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2047/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2062/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2068/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2085/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2099/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2108/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2114/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2119/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2124/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2129/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2133/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2138/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2144/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2148/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2154/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2160/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2164/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2169/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2176/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2180/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2185/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2190/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2194/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2200/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2206/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2210/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2220/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2224/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2231/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,15 +97,16 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/2210" />
       <recent name="$PROJECT_DIR$/2022" />
       <recent name="$PROJECT_DIR$/1863" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/2032" />
-      <recent name="$PROJECT_DIR$/2027" />
-      <recent name="$PROJECT_DIR$/2037" />
-      <recent name="$PROJECT_DIR$/2016" />
-      <recent name="$PROJECT_DIR$/1971" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/16" />
+      <recent name="$PROJECT_DIR$/12" />
+      <recent name="$PROJECT_DIR$/2231" />
+      <recent name="$PROJECT_DIR$/2224" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build leetcode">
@@ -273,6 +302,61 @@
           <url>file://$PROJECT_DIR$/2032/main.go</url>
           <line>27</line>
           <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/2047/main.go</url>
+          <line>74</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/2047/main.go</url>
+          <line>66</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/2068/main.go</url>
+          <line>22</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/2099/main.go</url>
+          <line>62</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/2099/main.go</url>
+          <line>48</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/2129/main.go</url>
+          <line>45</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/2129/main.go</url>
+          <line>26</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/2124/main.go</url>
+          <line>10</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/2138/main.go</url>
+          <line>19</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/2138/main.go</url>
+          <line>16</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/2231/main.go</url>
+          <line>63</line>
+          <option name="timeStamp" value="116" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
