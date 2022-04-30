@@ -83,10 +83,6 @@
     <configuration name="go build leetcode" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="leetcode" />
       <working_directory value="$PROJECT_DIR$" />
-      <envs>
-        <env name="GOOS" value="darwin" />
-        <env name="GOARCH" value="arm64" />
-      </envs>
       <kind value="PACKAGE" />
       <package value="leetcode" />
       <directory value="$PROJECT_DIR$" />
