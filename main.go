@@ -3,6 +3,6 @@ package main
 func main() {
 }
 
-func maxRotateFunction(nums []int) int {
+func reconstructQueue(people [][]int) [][]int {
 
 }
