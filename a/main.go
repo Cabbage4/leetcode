@@ -1,25 +1,36 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
-	fmt.Println(lcm(2, 5))
+	fmt.Println(sortPeople([]string{"Alice", "Bob", "Bob"}, []int{155, 185, 150}))
 }
 
-func smallestEvenMultiple(n int) int {
-	if n%2 == 0 {
-		return n
+type Node struct {
+	name   string
+	height int
+}
+
+func sortPeople(names []string, heights []int) []string {
+	node := make([]Node, len(names))
+	for i, n := range names {
+		node[i] = Node{
+			name:   n,
+			height: heights[i],
+		}
 	}
-	return n * 2
-}
 
-func gcd(a, b int) int {
-	if b == 0 {
-		return a
+	sort.Slice(node, func(i, j int) bool {
+		return node[i].height > node[j].height
+	})
+
+	r := make([]string, len(names))
+	for i := range node {
+		r[i] = node[i].name
 	}
-	return gcd(b, a%b)
-}
 
-func lcm(a, b int) int {
-	return a * (b / gcd(a, b))
+	return r
 }
