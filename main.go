@@ -3,6 +3,6 @@ package main
 func main() {
 }
 
-func flipLights(n int, presses int) int {
+func numSubarrayProductLessThanK(nums []int, k int) int {
 
 }
