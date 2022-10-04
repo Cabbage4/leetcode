@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(capitalizeTitle("First leTTeR of EACH Word"))
+	fmt.Println(capitalizeTitle("first leTTeR of EACH Word"))
 }
 
 func capitalizeTitle(title string) string {
