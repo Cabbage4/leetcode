@@ -1,3 +1,3 @@
-dir=775
+dir=794
 mkdir -p $dir && mv main.go $dir
 cp init/main.go .
