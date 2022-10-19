@@ -3,24 +3,39 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(commonFactors(43, 945))
+	fmt.Println(countSubarrays([]int{1, 3, 5, 2, 7, 5}, 1, 5))
+	//fmt.Println(countSubarrays([]int{1, 1, 1, 1}, 1, 1))
 }
 
-func commonFactors(a int, b int) int {
-	max := gcd(a, b)
-	set := make(map[int]bool)
-	for i := 1; i <= max; i++ {
-		if a%i == 0 && b%i == 0 {
-			set[i] = true
+func countSubarrays(nums []int, minK int, maxK int) int64 {
+	var r int64
+	maxI, minI, i0 := -1, -1, -1
+	for i, v := range nums {
+		if v == minK {
+			minI = i
 		}
+		if v == maxK {
+			maxI = i
+		}
+		if maxK < v || v < minK {
+			i0 = i
+		}
+
+		r += int64(max(min(maxI, minI)-i0, 0))
 	}
-	fmt.Println(set)
-	return len(set)
+	return r
 }
 
-func gcd(a, b int) int {
-	if b == 0 {
+func min(a, b int) int {
+	if a < b {
 		return a
 	}
-	return gcd(b, a%b)
+	return b
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }

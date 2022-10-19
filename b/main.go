@@ -1,39 +1,41 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+	"strconv"
+)
 
 func main() {
-	data := [][]int{{520626, 685427, 788912, 800638, 717251, 683428}, {23602, 608915, 697585, 957500, 154778, 209236}, {287585, 588801, 818234, 73530, 939116, 252369}}
-	fmt.Println(maxSum(data))
+	fmt.Println(sumOfNumberAndReverse(0))
+	fmt.Println(sumOfNumberAndReverse(11))
+	fmt.Println(sumOfNumberAndReverse(10))
+	fmt.Println(sumOfNumberAndReverse(181))
+	fmt.Println(sumOfNumberAndReverse(63))
+	fmt.Println(sumOfNumberAndReverse(443))
 }
 
-var directs = [][]int{
-	{-1, -1},
-	{-1, 0},
-	{-1, 1},
+func sumOfNumberAndReverse(num int) bool {
+	if num == 0 {
+		return true
+	}
 
-	{1, -1},
-	{1, 0},
-	{1, 1},
-}
+	ln := len(strconv.Itoa(num))
+	min := int(math.Pow10(ln - 2))
 
-func maxSum(grid [][]int) int {
-	var r int
-	for i := 1; i < len(grid)-1; i++ {
-		for j := 1; j < len(grid[i])-1; j++ {
-			tmp := grid[i][j]
-			for _, d := range directs {
-				nx := i + d[0]
-				ny := j + d[1]
-				if 0 <= nx && nx < len(grid) && 0 <= ny && ny < len(grid[i]) {
-					tmp += grid[nx][ny]
-				}
-			}
+	reverse := func(v int) int {
+		var r int
+		for v != 0 {
+			r = r*10 + v%10
+			v = v / 10
+		}
+		return r
+	}
 
-			if tmp > r {
-				r = tmp
-			}
+	for i := min; i <= num; i++ {
+		if i+reverse(i) == num {
+			return true
 		}
 	}
-	return r
+	return false
 }
