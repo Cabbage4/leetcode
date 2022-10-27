@@ -1,41 +1,29 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
 
 func main() {
-	fmt.Println(countSubarrays([]int{1, 3, 5, 2, 7, 5}, 1, 5))
-	//fmt.Println(countSubarrays([]int{1, 1, 1, 1}, 1, 1))
+	a := []string{"01:15", "02:00"}
+	b := []string{"02:01", "03:00"}
+	fmt.Println(haveConflict(a, b))
 }
 
-func countSubarrays(nums []int, minK int, maxK int) int64 {
-	var r int64
-	maxI, minI, i0 := -1, -1, -1
-	for i, v := range nums {
-		if v == minK {
-			minI = i
-		}
-		if v == maxK {
-			maxI = i
-		}
-		if maxK < v || v < minK {
-			i0 = i
-		}
-
-		r += int64(max(min(maxI, minI)-i0, 0))
+func haveConflict(event1 []string, event2 []string) bool {
+	parse := func(event string) int {
+		infos := strings.Split(event, ":")
+		v1, _ := strconv.Atoi(infos[0])
+		v2, _ := strconv.Atoi(infos[1])
+		return v1*60 + v2
 	}
-	return r
-}
 
-func min(a, b int) int {
-	if a < b {
-		return a
+	a1, a2 := parse(event1[0]), parse(event1[1])
+	b1, b2 := parse(event2[0]), parse(event2[1])
+	if !(a1 > b2 || a2 < b1) {
+		return true
 	}
-	return b
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
+	return false
 }

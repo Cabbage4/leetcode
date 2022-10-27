@@ -1,41 +1,34 @@
 package main
 
-import (
-	"fmt"
-	"math"
-	"strconv"
-)
+import "fmt"
 
 func main() {
-	fmt.Println(sumOfNumberAndReverse(0))
-	fmt.Println(sumOfNumberAndReverse(11))
-	fmt.Println(sumOfNumberAndReverse(10))
-	fmt.Println(sumOfNumberAndReverse(181))
-	fmt.Println(sumOfNumberAndReverse(63))
-	fmt.Println(sumOfNumberAndReverse(443))
+	//fmt.Println(subarrayGCD([]int{3, 3, 4, 1, 2}, 1))
+	fmt.Println(subarrayGCD([]int{3, 12, 9, 6}, 3))
+	fmt.Println(subarrayGCD([]int{4}, 7))
+	fmt.Println(subarrayGCD([]int{9, 3, 1, 2, 6, 3}, 3))
 }
 
-func sumOfNumberAndReverse(num int) bool {
-	if num == 0 {
-		return true
-	}
-
-	ln := len(strconv.Itoa(num))
-	min := int(math.Pow10(ln - 2))
-
-	reverse := func(v int) int {
-		var r int
-		for v != 0 {
-			r = r*10 + v%10
-			v = v / 10
-		}
-		return r
-	}
-
-	for i := min; i <= num; i++ {
-		if i+reverse(i) == num {
-			return true
+func subarrayGCD(nums []int, k int) int {
+	var r int
+	for i := 0; i < len(nums); i++ {
+		g := nums[i]
+		for j := i; j < len(nums); j++ {
+			g = gcd(g, nums[j])
+			if g < k {
+				break
+			}
+			if g == k {
+				r++
+			}
 		}
 	}
-	return false
+	return r
+}
+
+func gcd(a, b int) int {
+	if a%b == 0 {
+		return b
+	}
+	return gcd(b, a%b)
 }
