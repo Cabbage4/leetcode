@@ -1,34 +1,47 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	//fmt.Println(subarrayGCD([]int{3, 3, 4, 1, 2}, 1))
-	fmt.Println(subarrayGCD([]int{3, 12, 9, 6}, 3))
-	fmt.Println(subarrayGCD([]int{4}, 7))
-	fmt.Println(subarrayGCD([]int{9, 3, 1, 2, 6, 3}, 3))
+	creators := []string{"alice"}
+	ids := []string{"a"}
+	views := []int{0}
+	fmt.Println(mostPopularCreator(creators, ids, views))
 }
 
-func subarrayGCD(nums []int, k int) int {
-	var r int
-	for i := 0; i < len(nums); i++ {
-		g := nums[i]
-		for j := i; j < len(nums); j++ {
-			g = gcd(g, nums[j])
-			if g < k {
-				break
-			}
-			if g == k {
-				r++
-			}
+func mostPopularCreator(creators []string, ids []string, views []int) [][]string {
+	var max int
+	var maxList []int
+	imp := make(map[string][]int)
+	cmp := make(map[string]int)
+	for i := range creators {
+		imp[creators[i]] = append(imp[creators[i]], i)
+		cmp[creators[i]] += views[i]
+		if cmp[creators[i]] > max {
+			max = cmp[creators[i]]
+			maxList = []int{i}
+		} else if cmp[creators[i]] == max {
+			maxList = append(maxList, i)
 		}
 	}
-	return r
-}
 
-func gcd(a, b int) int {
-	if a%b == 0 {
-		return b
+	var r [][]string
+	for _, i := range maxList {
+		list := imp[creators[i]]
+		maxCount := 0
+		maxValue := ""
+		for j := range list {
+			if views[list[j]] > maxCount {
+				maxCount = views[list[j]]
+				maxValue = ids[list[j]]
+			} else if views[list[j]] == maxCount && (ids[list[j]] < maxValue || maxValue == "") {
+				maxValue = ids[list[j]]
+			}
+		}
+
+		r = append(r, []string{creators[i], maxValue})
 	}
-	return gcd(b, a%b)
+	return r
 }
