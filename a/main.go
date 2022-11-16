@@ -3,21 +3,30 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(averageValue([]int{4, 4, 9, 10}))
+	fmt.Println(applyOperations([]int{0, 1}))
+	fmt.Println(applyOperations([]int{1, 2, 2, 1, 1, 0}))
 }
 
-func averageValue(nums []int) int {
-	sum := 0
-	count := 0
-	for i := 0; i < len(nums); i++ {
-		if nums[i]%3 == 0 && nums[i]%2 == 0 {
-			count++
-			sum += nums[i]
+func applyOperations(nums []int) []int {
+	var r []int
+	for i := 1; i < len(nums); i++ {
+		if nums[i] == nums[i-1] {
+			nums[i-1] *= 2
+			nums[i] = 0
+		}
+
+		if nums[i-1] != 0 {
+			r = append(r, nums[i-1])
 		}
 	}
 
-	if count == 0 {
-		return 0
+	if nums[len(nums)-1] != 0 {
+		r = append(r, nums[len(nums)-1])
 	}
-	return sum / count
+
+	limit := len(nums) - len(r)
+	for i := 0; i < limit; i++ {
+		r = append(r, 0)
+	}
+	return r
 }

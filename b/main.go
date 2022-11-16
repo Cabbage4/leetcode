@@ -1,47 +1,50 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	creators := []string{"alice"}
-	ids := []string{"a"}
-	views := []int{0}
-	fmt.Println(mostPopularCreator(creators, ids, views))
+	fmt.Println(maximumSubarraySum([]int{9, 9, 9, 1, 2, 3}, 3))
+	fmt.Println(maximumSubarraySum([]int{1, 5, 4, 2, 9, 9, 9}, 3))
+	fmt.Println(maximumSubarraySum([]int{4, 4, 4}, 3))
 }
 
-func mostPopularCreator(creators []string, ids []string, views []int) [][]string {
-	var max int
-	var maxList []int
-	imp := make(map[string][]int)
-	cmp := make(map[string]int)
-	for i := range creators {
-		imp[creators[i]] = append(imp[creators[i]], i)
-		cmp[creators[i]] += views[i]
-		if cmp[creators[i]] > max {
-			max = cmp[creators[i]]
-			maxList = []int{i}
-		} else if cmp[creators[i]] == max {
-			maxList = append(maxList, i)
+func maximumSubarraySum(nums []int, k int) int64 {
+	var r int64
+
+	var sum int64 = 0
+	dupMap := make(map[int]bool)
+	cmp := make(map[int]int)
+	for i := 0; i < k; i++ {
+		sum += int64(nums[i])
+		cmp[nums[i]]++
+
+		if cmp[nums[i]] >= 2 {
+			dupMap[nums[i]] = true
 		}
 	}
 
-	var r [][]string
-	for _, i := range maxList {
-		list := imp[creators[i]]
-		maxCount := 0
-		maxValue := ""
-		for j := range list {
-			if views[list[j]] > maxCount {
-				maxCount = views[list[j]]
-				maxValue = ids[list[j]]
-			} else if views[list[j]] == maxCount && (ids[list[j]] < maxValue || maxValue == "") {
-				maxValue = ids[list[j]]
-			}
+	if len(dupMap) == 0 {
+		r = sum
+	}
+
+	for i := k; i < len(nums); i++ {
+		sum = sum + int64(nums[i]) - int64(nums[i-k])
+
+		cmp[nums[i-k]]--
+		cmp[nums[i]]++
+
+		if cmp[nums[i-k]] < 2 {
+			delete(dupMap, nums[i-k])
 		}
 
-		r = append(r, []string{creators[i], maxValue})
+		if cmp[nums[i]] >= 2 {
+			dupMap[nums[i]] = true
+		}
+
+		if len(dupMap) == 0 && sum > r {
+			r = sum
+		}
 	}
+
 	return r
 }
