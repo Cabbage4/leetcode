@@ -3,6 +3,6 @@ package main
 func main() {
 }
 
-func beautifulArray(n int) []int {
+func rob(nums []int) int {
 
 }

@@ -1,49 +1,39 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
-	fmt.Println(maximumSubarraySum([]int{9, 9, 9, 1, 2, 3}, 3))
-	fmt.Println(maximumSubarraySum([]int{1, 5, 4, 2, 9, 9, 9}, 3))
-	fmt.Println(maximumSubarraySum([]int{4, 4, 4}, 3))
+	fmt.Println(appendCharacters("aa", "aaa"))
+	fmt.Println(appendCharacters("coaching", "coding"))
+	fmt.Println(appendCharacters("abcde", "a"))
+	fmt.Println(appendCharacters("z", "abcde"))
 }
 
-func maximumSubarraySum(nums []int, k int) int64 {
-	var r int64
-
-	var sum int64 = 0
-	dupMap := make(map[int]bool)
-	cmp := make(map[int]int)
-	for i := 0; i < k; i++ {
-		sum += int64(nums[i])
-		cmp[nums[i]]++
-
-		if cmp[nums[i]] >= 2 {
-			dupMap[nums[i]] = true
-		}
+func appendCharacters(s string, t string) int {
+	mp := make(map[byte][]int)
+	for i := range s {
+		mp[s[i]] = append(mp[s[i]], i)
 	}
 
-	if len(dupMap) == 0 {
-		r = sum
-	}
-
-	for i := k; i < len(nums); i++ {
-		sum = sum + int64(nums[i]) - int64(nums[i-k])
-
-		cmp[nums[i-k]]--
-		cmp[nums[i]]++
-
-		if cmp[nums[i-k]] < 2 {
-			delete(dupMap, nums[i-k])
+	var r int
+	si := 0
+	for i := range t {
+		list, ok := mp[t[i]]
+		if !ok {
+			r += len(t) - i
+			break
 		}
 
-		if cmp[nums[i]] >= 2 {
-			dupMap[nums[i]] = true
+		nsi := sort.SearchInts(list, si)
+		if nsi == len(list) {
+			r += len(t) - i
+			break
 		}
 
-		if len(dupMap) == 0 && sum > r {
-			r = sum
-		}
+		si = list[nsi] + 1
 	}
 
 	return r

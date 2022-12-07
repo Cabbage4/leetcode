@@ -1,32 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
-	fmt.Println(applyOperations([]int{0, 1}))
-	fmt.Println(applyOperations([]int{1, 2, 2, 1, 1, 0}))
+	fmt.Println(pivotInteger(15))
+	fmt.Println(pivotInteger(4))
+	fmt.Println(pivotInteger(8))
 }
 
-func applyOperations(nums []int) []int {
-	var r []int
-	for i := 1; i < len(nums); i++ {
-		if nums[i] == nums[i-1] {
-			nums[i-1] *= 2
-			nums[i] = 0
-		}
+func pivotInteger(n int) int {
+	target := (n*n + n) / 2
+	r := math.Sqrt(float64(target))
 
-		if nums[i-1] != 0 {
-			r = append(r, nums[i-1])
-		}
+	if r != math.Floor(r) {
+		return -1
 	}
 
-	if nums[len(nums)-1] != 0 {
-		r = append(r, nums[len(nums)-1])
-	}
-
-	limit := len(nums) - len(r)
-	for i := 0; i < limit; i++ {
-		r = append(r, 0)
-	}
-	return r
+	return int(r)
 }
